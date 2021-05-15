@@ -5,24 +5,24 @@
 class Metana < Formula
   desc "An abstract migration tool written in Go for Go services."
   homepage "https://github.com/g14a/metana"
-  version "1.6"
+  version "1.7"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/g14a/metana/releases/download/v1.6/metana_1.6_darwin_amd64.tar.gz"
-    sha256 "9e44fab0dc9705445bc79ae165ca8ceb7fab0a76e315ff299f93a1efc64a30db"
+    url "https://github.com/g14a/metana/releases/download/v1.7/metana_1.7_darwin_amd64.tar.gz"
+    sha256 "0a7c97eaa712a4b0b1716efa565624fc35aa282e4cab8a43a5c9d9348dad602c"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/g14a/metana/releases/download/v1.6/metana_1.6_darwin_arm64.tar.gz"
-    sha256 "beaef1dcbf805473ce2570a56bc24012f913e9b48bf9522e5cf5ae97e6c657ac"
+    url "https://github.com/g14a/metana/releases/download/v1.7/metana_1.7_darwin_arm64.tar.gz"
+    sha256 "09a055b0f529cbb3bc18fa7c285b4d128b1c00d2d9def16a705f0cebada7cc6e"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/g14a/metana/releases/download/v1.6/metana_1.6_linux_amd64.tar.gz"
-    sha256 "2c9fa9ae69f6075b0d278f9c3d3aa631c182601f1bb2a01c603720945346995c"
+    url "https://github.com/g14a/metana/releases/download/v1.7/metana_1.7_linux_amd64.tar.gz"
+    sha256 "32226c5faacde507673ba34184faff424fe303a4b907824caa13fa0763980b48"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/g14a/metana/releases/download/v1.6/metana_1.6_linux_arm64.tar.gz"
-    sha256 "dc9175f896b082909a26258c53a3769f08f6fc88d0c518c9d85a0891d618c516"
+    url "https://github.com/g14a/metana/releases/download/v1.7/metana_1.7_linux_arm64.tar.gz"
+    sha256 "dbc9569ad24a27fc5e9cd1d53531fa055fa80f100d35b2b60b5a0572ae28c6b9"
   end
 
   def install
