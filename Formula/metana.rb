@@ -10,19 +10,19 @@ class Metana < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/g14a/metana/releases/download/v1.7/metana_1.7_darwin_amd64.tar.gz"
-    sha256 "0a7c97eaa712a4b0b1716efa565624fc35aa282e4cab8a43a5c9d9348dad602c"
+    sha256 "36b1fa3b43b7ffa949eba10dd82a4be29e6bf20fa36cc3e383182476a678cfd5"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/g14a/metana/releases/download/v1.7/metana_1.7_darwin_arm64.tar.gz"
-    sha256 "09a055b0f529cbb3bc18fa7c285b4d128b1c00d2d9def16a705f0cebada7cc6e"
+    sha256 "c24f5cf104b206ecf6294ca2d595da61f339de12009310e910acdfe276fd78fd"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/g14a/metana/releases/download/v1.7/metana_1.7_linux_amd64.tar.gz"
-    sha256 "32226c5faacde507673ba34184faff424fe303a4b907824caa13fa0763980b48"
+    sha256 "391d89475420b2738568cd76c1151502c163be696b21f6ce7aff3b09852d5d14"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/g14a/metana/releases/download/v1.7/metana_1.7_linux_arm64.tar.gz"
-    sha256 "dbc9569ad24a27fc5e9cd1d53531fa055fa80f100d35b2b60b5a0572ae28c6b9"
+    sha256 "361243404567f22d811ae037f9bc5a932e88fe27f5cd5816dd07a303298eb904"
   end
 
   def install
