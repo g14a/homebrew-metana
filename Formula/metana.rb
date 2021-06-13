@@ -5,24 +5,29 @@
 class Metana < Formula
   desc "An abstract migration tool written in Go for Go services."
   homepage "https://github.com/g14a/metana"
-  version "2.0"
+  version "2.1"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/g14a/metana/releases/download/v2.0/metana_2.0_darwin_amd64.tar.gz"
-    sha256 "0edc57b2126190d34d5074c47229eed9697ce5f7384cd6059759f65097af3274"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/g14a/metana/releases/download/v2.1/metana_2.1_darwin_amd64.tar.gz"
+      sha256 "9b12e95f1bea58a01b093b5d768106eaa72eae941cd8eb607d9ee6cc8aeb0686"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/g14a/metana/releases/download/v2.1/metana_2.1_darwin_arm64.tar.gz"
+      sha256 "2008e2f9ee034793a70b25262c1383bdc8afead367ea4bba69028cc78a96ec3b"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/g14a/metana/releases/download/v2.0/metana_2.0_darwin_arm64.tar.gz"
-    sha256 "396b9119c9ebb9c78a6508bb7c5c25e36b53f5daf1355b8e7b9dafeb6c0a3c6e"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/g14a/metana/releases/download/v2.0/metana_2.0_linux_amd64.tar.gz"
-    sha256 "607810baf560eee34a0f4c351cc88cf67ec84000023629ac356d052486c0887f"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/g14a/metana/releases/download/v2.0/metana_2.0_linux_arm64.tar.gz"
-    sha256 "79d30ca67f6ede942fb2fafc1a7b587ab02b9c2e4e737360d26c3db45f0b2865"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/g14a/metana/releases/download/v2.1/metana_2.1_linux_amd64.tar.gz"
+      sha256 "f613f07183d70c3d510583fdf986c4e5ff3080d267169d2dd2b78955cb10431f"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/g14a/metana/releases/download/v2.1/metana_2.1_linux_arm64.tar.gz"
+      sha256 "7d40a14bdc52245179f9c4be7210f81d2c70dbcbac946442fc73075d2438979d"
+    end
   end
 
   def install
