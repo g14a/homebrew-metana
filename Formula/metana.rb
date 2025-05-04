@@ -5,21 +5,21 @@
 class Metana < Formula
   desc "An abstract migration tool written in Go for Go services."
   homepage "https://github.com/g14a/metana"
-  version "3.0"
+  version "3.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/g14a/metana/releases/download/v3.0/metana_3.0_darwin_amd64.tar.gz"
-      sha256 "5d70776dab6e30e84c4848a7618ac4ff95eb3d901b1264ec95a0fb638ca0ab05"
+      url "https://github.com/g14a/metana/releases/download/v3.2/metana_3.2_darwin_amd64.tar.gz"
+      sha256 "af7cee526cd7708671178380635ca80a22769c73b9a325c979358a70e5aed586"
 
       def install
         bin.install "metana"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/g14a/metana/releases/download/v3.0/metana_3.0_darwin_arm64.tar.gz"
-      sha256 "61cd8fea5b3df904b9bbb72a3b3193edf9486f5d75c79e5176772688e7a3a99d"
+      url "https://github.com/g14a/metana/releases/download/v3.2/metana_3.2_darwin_arm64.tar.gz"
+      sha256 "5303ab0ef5a64a5ce443e1b4b350724a37b9b9001161715ff008aec06d4ef77b"
 
       def install
         bin.install "metana"
@@ -28,24 +28,18 @@ class Metana < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/g14a/metana/releases/download/v3.0/metana_3.0_linux_amd64.tar.gz"
-        sha256 "da9d3633d69f4aaa2d25004478ecaee0a39278936c8a689f626cdfb1af67144e"
-
-        def install
-          bin.install "metana"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/g14a/metana/releases/download/v3.2/metana_3.2_linux_amd64.tar.gz"
+      sha256 "3c0923ec7006932c77fe5874b509eb770de81f4cbf4fd398c003b03d5aa7ce1b"
+      def install
+        bin.install "metana"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/g14a/metana/releases/download/v3.0/metana_3.0_linux_arm64.tar.gz"
-        sha256 "9cd6d9a9cba20d3ee26cc5f58078570c8780595913a8251ba2c5ac5570d72479"
-
-        def install
-          bin.install "metana"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/g14a/metana/releases/download/v3.2/metana_3.2_linux_arm64.tar.gz"
+      sha256 "aeb7073200d399f56710f5ef5d1589cfbf48215d28dde08cb92017a6fea667a6"
+      def install
+        bin.install "metana"
       end
     end
   end
